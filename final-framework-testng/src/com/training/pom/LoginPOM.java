@@ -19,9 +19,23 @@ public class LoginPOM {
 	@FindBy(id="password")
 	private WebElement password;
 	
-	@FindBy(id="formLogin_submitAuth")
+	@FindBy(xpath="//button[@name=\"submitAuth\"]")
 	private WebElement loginBtn; 
 	
+	@FindBy(xpath="//a[contains(text(),\"Sign up\")]")
+	private WebElement signUpLink;
+	
+	@FindBy(xpath="//a[contains(text(),\"I lost my password\")]")
+	private WebElement lostPwdLink;
+	
+	@FindBy(xpath="//title[contains(text(),'My Organization')]")
+	private WebElement loginPgTitle;
+	
+	@FindBy(xpath="//a[@data-toggle='dropdown']")
+	private WebElement profileDD;
+	
+	@FindBy(id="logout_button")
+	private WebElement logoutLnk;
 	public void sendUserName(String userName) {
 		this.userName.clear();
 		this.userName.sendKeys(userName);
@@ -35,4 +49,15 @@ public class LoginPOM {
 	public void clickLoginBtn() {
 		this.loginBtn.click(); 
 	}
+	public void clickSignUpLink() {
+		this.signUpLink.click(); 
+	}
+	public void clickLostPwdLink() {
+		this.lostPwdLink.click(); 
+	}
+
+	public String getLoginPgTitle() {
+		return this.driver.getTitle();
+	}
+	
 }

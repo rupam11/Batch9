@@ -25,14 +25,12 @@ public class LoginDataProviders {
 			
 			result[count ++] = obj; 
 		}
-		
-		
 		return result;
 	}
 	
 	@DataProvider(name = "excel-inputs")
 	public Object[][] getExcelData(){
-		String fileName ="C:/Users/Naveen/Desktop/Testing.xlsx"; 
+		String fileName ="C:\\Users\\IBM_ADMIN\\Desktop\\manipal selenium training\\ELearning_Level_3.xlsx"; 
 		return new ApachePOIExcelRead().getExcelContent(fileName); 
 	}
 	
